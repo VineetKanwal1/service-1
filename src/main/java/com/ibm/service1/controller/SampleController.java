@@ -17,13 +17,15 @@ public class SampleController {
 
     @GetMapping("/slowApi")
     public String timeConsumingAPI(@RequestParam(value = "delay", defaultValue = "0") Integer delay) throws InterruptedException {
+        
         if(delay == 0) {
+            
             Random random = new Random();
-            delay = random.nextInt(10);
+            delay = random.nextInt(11);
         }
 
         TimeUnit.SECONDS.sleep(delay);
-        return "Result";
+        return "Result111";
     }
 
 }
